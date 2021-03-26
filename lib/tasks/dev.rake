@@ -1,9 +1,9 @@
 desc "Hydrate the database with some sample data to look at so that developing is easier"
 task({ :sample_data => :environment}) do
 
-  Painting.destory_all
-  Artist.destory_all
-  User.destory_all
+  Painting.destroy_all
+  Artist.destroy_all
+  User.destroy_all
 
   require("date")
 
@@ -14,9 +14,11 @@ task({ :sample_data => :environment}) do
   bio2 = "Henri Matisse was a French artist, known for both his use of colour and his fluid and original draughtsmanship."
   bio3 = "Vincent Willem van Gogh was a Dutch post-impressionist painter who posthumously became one of the most famous and influential figures in the history of Western art. In a decade, he created about 2,100 artworks, including around 860 oil paintings, most of which date from the last two years of his life."
   bios = [ bio1, bio2, bio3 ]
+  ids = [1, 2, 3]
 
   3.times do |count|
     artist = Artist.new
+    artist.id = ids.at(count)
     artist.name = names.at(count)
     artist.birthdate = birthdates.at(count)
     artist.bio = bios.at(count)
@@ -45,10 +47,12 @@ task({ :sample_data => :environment}) do
   images = [ claudemonetimage1, claudemonetimage2, claudemonetimage3, hernimatisseimage1, hernimatisseimage2, hernimatisseimage3, vincentvangoghimage1, vincentvangoghimage2, vincentvangoghimage3 ]
   museums = [ "Musée d'Orsay, Paris", "Princeton University Art Museum", "Art Institute of Chicago", "The Hermitage", "The Pushkin Museum of Fine Arts", "The Museum of Modern Art", "Van Gogh Museum", "Museum of Modern Art", "Kröller-Müller Museum" ]
   artist_ids = [1, 1, 1, 2, 2, 2, 3, 3, 3]
+  painting_ids = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 
  9.times do |count|
     painting = Painting.new
+    painting.id = painting_ids.at(count)
     painting.title = titles.at(count)
     painting.date_painted = dates_painted.at(count)
     painting.image = images.at(count)

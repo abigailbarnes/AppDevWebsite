@@ -1,5 +1,5 @@
 <h1>
-  Painting #<%= @the_painting.id %> details
+  <%= @the_painting.title %>'s Details
 </h1>
 
 <a href="/paintings" class="btn btn-block btn-outline-secondary">
@@ -8,78 +8,32 @@
 
 &nbsp;|&nbsp;
 
-<hr>
+  <dl>
+    <dt>
+      Title
+    </dt>
+    <dd>
+      <%= @the_painting.title %>
+    </dd>
 
-<dl>
-  <dt>
-    Title
-  </dt>
-  <dd>
-    <%= @the_painting.title %>
-  </dd>
+    <dt>
+      Date Painted
+    </dt>
+    <dd>
+      <%= @the_painting.date_painted %>
+    </dd>
 
-  <dt>
-    Date Painted
-  </dt>
-  <dd>
-    <%= @the_painting.date_painted %>
-  </dd>
+    <dt>
+      Artist
+    </dt>
+    <dd>
+      <%= @the_artist.name %>
+    </dd>
 
-  <dt>
-    Artist
-  </dt>
-  <dd>
-    <%= @the_artist.name %>
-  </dd>
-
-  <dt>
-    Image
-  </dt>
-  <dd>
-    <img src="<%= @the_painting.image %>" class="width-200 height-200" >
-  </dd>
-
-  <dt>
-    Created at
-  </dt>
-  <dd>
-    <%= time_ago_in_words(@the_director.created_at) %> ago
-  </dd>
-
-  <dt>
-    Updated at
-  </dt>
-  <dd>
-    <%= time_ago_in_words(@the_director.updated_at) %> ago
-  </dd>
-</dl>
-
-<h2>Filmography</h2>
-
-<table border="1">
-<% @filmography.each do |a_film| %>
-  <tr>
-    <td>
-      <%= a_film.id %>
-    </td>
-    <td>
-      <img src="http://robohash.org/<%= a_film.image %>?set=set4">
-    </td>
-    <td>
-      <%= a_film.title %>
-    </td>
-    <td>
-      <%= a_film.year %>
-    </td>
-    <td>
-      <% d = Director.where({ :id => a_film.director_id }).at(0) %>
-      <%= d.name %>
-    </td>
-    <td>
-      <a href="">
-        Show details
-      </a>
-    </td>
-  </tr>
-<% end %>
-</table>
+    <dt>
+      Image
+    </dt>
+    <dd>
+      <img src="<%= @the_painting.image %>" class="width-40" >
+    </dd>
+  </dl>

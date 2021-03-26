@@ -1,1 +1,73 @@
-this is the artist show page
+<h1>
+  <%= @the_artist.name %>'s Details
+</h1>
+
+<a href="/artists" class="btn btn-block btn-outline-secondary">
+  Go back
+</a>
+
+&nbsp;|&nbsp;
+
+<dl>
+    <dt>
+      Name
+    </dt>
+    <dd>
+      <%= @the_artist.name %>
+    </dd>
+
+    <dt>
+      Date of Birth
+    </dt>
+    <dd>
+      <%= @the_artist.birthdate %>
+    </dd>
+</dl>
+
+
+
+
+<h2>Paintings</h2>
+
+<table border="1">
+<tr>
+  <td>
+    ID
+  </td>
+  <td>
+    Title
+  </td>
+  <td>
+    Image
+  </td>
+  <td>
+    Date Painted
+  </td>
+  <td>
+    Additional Information
+  </td>
+</tr>
+<% @pieces.each do |a_painting| %>
+  <tr>
+    <td>
+      <%= a_painting.id %>
+    </td>
+    <td>
+      <%= a_painting.title %>
+    </td>
+    <td>
+      <img src="<%= a_painting.image %>">
+    </td>
+    <td>
+      <%= a_painting.date_painted %>
+    </td>
+    <td>
+      <a href="/paintings/<%= a_painting.id %>">
+        Show details
+      </a>
+    </td>
+  </tr>
+<% end %>
+</table>
+  
+

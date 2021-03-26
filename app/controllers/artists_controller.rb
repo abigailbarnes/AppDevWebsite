@@ -7,6 +7,15 @@ class ArtistsController < ApplicationController
   end
 
   def show 
+
+    the_id = params.fetch("artist_id")
+
+    @the_artist = Artist.where({ :id => the_id }).at(0)
+
+
+    @pieces = Painting.where({ :artist_id => @the_artist.id })
+
+
     render({ :template => "artists_templates/show.html.erb" })
   end
 
