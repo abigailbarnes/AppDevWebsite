@@ -1,7 +1,35 @@
 <h1>List of artists</h1>
 
-<% @list_of_artists.each do |an_artist|%>
-<%= an_artist.name %>
-<%= an_artist.birthdate %>
-<%= an_artist.bio %>
-<% end %>
+<table border = "1">
+  <tr>
+    <th>
+      ID
+    </th>
+
+    <th>
+      Name
+    </th>
+
+    <th>
+      
+    </th>
+  </tr>
+
+  <% @list_of_artists.each do |an_artist|%>
+    <tr>
+      <td>
+        <%= an_artist.id %>
+      </td>
+
+      <td>
+        <%= an_artist.name %>
+      </td>
+
+      <td>
+        <a href="/users/<%= an_artist.id %>">
+          Show details
+        </a>
+      </td>
+    </tr>
+  <% end %>
+</table>

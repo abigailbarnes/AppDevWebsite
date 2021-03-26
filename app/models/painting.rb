@@ -12,4 +12,7 @@
 #  artist_id    :integer
 #
 class Painting < ApplicationRecord
+
+
+
 end
