@@ -26,17 +26,25 @@
   </head>
 
   <body>
+    <p style = "color: green;">
+      <%= notice %>
+    </p>
+    <p style = "color: red;">
+      <%= alert %>
+    </p>
+
+
     <nav>
       <ul>
         <li><a href="/">Home</a></li>
         <li><a href="/paintings">Paintings</a></li>
         <li><a href="/artists">Artists</a></li>
-        <li><a href="/users">Users</a></li>
 
         <% if @current_user == nil %>
         <li><a href="/user_sign_in">Sign In</a></li>
         <li><a href="/user_sign_up">Sign Up</a></li>
         <% else %>
+        <li><a href="/users">Users</a></li>
         <li><a href="/users/<%= @current_user.id %>">Profile</a></li>
         <li><a href="/user_sign_out">Sign Out</a></li>
         <% end %>
