@@ -6,7 +6,13 @@
   Go back
 </a>
 
-&nbsp;|&nbsp;
+<% if @current_user != nil %>
+      <a href="/insert_bookmark" class="btn btn-block btn-outline-secondary">
+        Bookmark
+      </a>
+    <% end %>
+
+
 
   <dl>
     <dt>
@@ -36,4 +42,6 @@
     <dd>
       <img src="<%= @the_painting.image %>" class="width-40" >
     </dd>
+
+    
   </dl>
