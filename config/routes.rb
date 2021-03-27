@@ -34,8 +34,8 @@ Rails.application.routes.draw do
   get("/artists", { :controller => "artists", :action => "index" })
   get("/artists/:artist_id", { :controller => "artists", :action => "show" })
 
-  #get("/users", { :controller => "users", :action => "index" })
-  #get("/users/:user_id", { :controller => "users", :action => "show" })
+  get("/users", { :controller => "users", :action => "index" })
+  get("/users/:user_id", { :controller => "users", :action => "show" })
 
 
 end

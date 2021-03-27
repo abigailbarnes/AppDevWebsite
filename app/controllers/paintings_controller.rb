@@ -1,5 +1,7 @@
 class PaintingsController < ApplicationController
 
+  skip_before_action(:force_user_sign_in, { :only => [:index] })
+
   def index 
     @list_of_paintings = Painting.all
     render({ :template => "paintings_templates/index.html.erb" })

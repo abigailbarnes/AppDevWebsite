@@ -2,9 +2,6 @@
 
 <table border = "1">
   <tr>
-    <th>
-      ID
-    </th>
 
     <th>
       Title
@@ -21,16 +18,13 @@
 
   <% @list_of_paintings.each do |a_painting|%>
     <tr>
-      <td>
-        <%= a_painting.id %>
-      </td>
 
       <td>
         <%= a_painting.title %>
       </td>
 
       <td>
-        <img src="<%= a_painting.image %>" class="width-200 height-200" />
+        <img src="<%= a_painting.image %>" class = "img-thumbnail picture"/>
       </td>
 
       <td>
