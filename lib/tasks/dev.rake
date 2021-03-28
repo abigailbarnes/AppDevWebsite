@@ -4,6 +4,7 @@ task({ :sample_data => :environment}) do
   Painting.destroy_all
   Artist.destroy_all
   User.destroy_all
+  Bookmark.destroy_all
 
   require("date")
 

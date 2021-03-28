@@ -19,9 +19,9 @@ class BookmarksController < ApplicationController
 
   def create
 
-    painting_title = params.fetch("query_painting_title")
+    painting_id = params.fetch("query_painting_title")
 
-    @the_painting = Painting.where({ :title => painting_title }).at(0)
+    @the_painting = Painting.where({ :id => painting_id }).at(0)
 
 
 

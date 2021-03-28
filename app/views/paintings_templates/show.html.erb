@@ -7,14 +7,13 @@
 </a>
 
 <% if @current_user != nil %>
-      <form action="/insert_bookmark" method="post">
-        <div>
-          <button> Bookmark </button>
-          <input id="painting_title" name="query_painting_title">
-        </div>
-        
-      </form>
-    <% end %>
+ <form action="/insert_bookmark" method="post">
+  <div>
+    <button> Bookmark </button>
+    <input type="hidden" id="painting_title" value="<%= @the_painting.id %>" name="query_painting_title">
+  </div>
+ </form>
+<% end %>
 
 
 

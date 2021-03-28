@@ -16,11 +16,13 @@
 
     <form action="/insert_bookmark" method="post">
       <div>
-        <label for="painting_title_box">
-          Painting
-        </label>
-
-        <input type="text" id="painting_title_box" name="query_painting_title">
+        <select id = "painting_title_box" name="query_painting_title">
+          <% Painting.all.order(:title).each do |a_painting| %>
+            <option>
+              <%= a_painting.title %>
+            </option>
+          <%end%>
+        </select>
       </div>
 
       <button>
@@ -30,59 +32,59 @@
   </div>
 </div>
 
+
 <hr>
 <div>
   <div>
     <table>
       <tr>
         <th>
-          ID
+          Title
         </th>
 
         <th>
-          Painting
+          Image
         </th>
 
         <th>
-          User
+          Artist
         </th>
+        
 
         <th>
-          Created at
-        </th>
-
-        <th>
-          Updated at
         </th>
 
         <th>
         </th>
+
       </tr>
 
       <% @list_of_bookmarks.each do |a_bookmark| %>
       <tr>
+
         <td>
-          <%= a_bookmark.id %>
+          <% @painting = Painting.where({ :id => a_bookmark.painting_id }).at(0) %>
+          <%= @painting.title%>
+        </td>
+      
+        <td>
+          <img src="<%= @painting.image %>" class = "img-thumbnail picture"/>
         </td>
 
         <td>
-          <%= a_bookmark.painting_id %>
+          <% @artist = Artist.where({ :id => @painting.artist_id }).at(0) %>
+          <%= @artist.name %>
         </td>
 
         <td>
-          <%= a_bookmark.user_id %>
+          <a href="/painting/<%= @painting.id %>">
+            Show painting details
+          </a>
         </td>
 
         <td>
-          <%= time_ago_in_words(a_bookmark.created_at) %> ago
-        </td>
-        <td>
-          <%= time_ago_in_words(a_bookmark.updated_at) %> ago
-        </td>
-
-        <td>
-          <a href="/bookmarks/<%= a_bookmark.id %>">
-            Show details
+          <a href="/delete_bookmark/<%= @painting.id %>">
+            Delete bookmark
           </a>
         </td>
       </tr>
