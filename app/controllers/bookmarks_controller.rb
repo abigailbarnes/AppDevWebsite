@@ -18,9 +18,16 @@ class BookmarksController < ApplicationController
   end
 
   def create
+
+    painting_title = params.fetch("query_painting_title")
+
+    @the_painting = Painting.where({ :title => painting_title }).at(0)
+
+
+
     the_bookmark = Bookmark.new
-    the_bookmark.painting_id = params.fetch("query_painting_id")
-    the_bookmark.user_id = params.fetch("query_user_id")
+    the_bookmark.painting_id = @the_painting.id
+    the_bookmark.user_id = @current_user.id
 
     if the_bookmark.valid?
       the_bookmark.save

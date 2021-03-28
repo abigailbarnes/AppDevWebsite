@@ -1,7 +1,7 @@
 <div>
   <div>
     <h1>
-      List of <% @current_user.id %>s bookmarks
+      List of <%= @current_user.first_name %>'s bookmarks
     </h1>
   </div>
 </div>
@@ -16,19 +16,11 @@
 
     <form action="/insert_bookmark" method="post">
       <div>
-        <label for="painting_id_box">
+        <label for="painting_title_box">
           Painting
         </label>
 
-        <input type="text" id="painting_id_box" name="query_painting_id">
-      </div>
-
-      <div>
-        <label for="user_id_box">
-          User
-        </label>
-
-        <input type="text" id="user_id_box" name="query_user_id">
+        <input type="text" id="painting_title_box" name="query_painting_title">
       </div>
 
       <button>

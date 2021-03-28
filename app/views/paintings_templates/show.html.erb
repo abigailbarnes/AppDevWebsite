@@ -7,9 +7,13 @@
 </a>
 
 <% if @current_user != nil %>
-      <a href="/insert_bookmark" class="btn btn-block btn-outline-secondary">
-        Bookmark
-      </a>
+      <form action="/insert_bookmark" method="post">
+        <div>
+          <button> Bookmark </button>
+          <input id="painting_title" name="query_painting_title">
+        </div>
+        
+      </form>
     <% end %>
 
 
