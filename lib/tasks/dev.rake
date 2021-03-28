@@ -38,8 +38,8 @@ task({ :sample_data => :environment}) do
   hernimatisseimage2 = "https://upload.wikimedia.org/wikipedia/en/4/4a/Henri_Matisse%2C_1911-12%2C_La_Fen%C3%AAtre_%C3%A0_Tanger_%28Paysage_vu_d%27une_fen%C3%AAtre_Landscape_viewed_from_a_window%2C_Tangiers%29%2C_oil_on_canvas%2C_115_x_80_cm%2C_Pushkin_Museum.jpg"
   hernimatisseimage3 = "https://upload.wikimedia.org/wikipedia/en/c/cc/Atelier_rouge_matisse_1.jpg"
 
-  vincentvangoghimage1 = "https://upload.wikimedia.org/wikipedia/commons/7/76/Vincent_van_Gogh_-_De_slaapkamer_-_Google_Art_Project.jpg"
-  vincentvangoghimage2 = "https://upload.wikimedia.org/wikipedia/commons/e/ea/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg"
+  vincentvangoghimage1 = "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Vincent_van_Gogh_-_De_slaapkamer_-_Google_Art_Project.jpg/1920px-Vincent_van_Gogh_-_De_slaapkamer_-_Google_Art_Project.jpg"
+  vincentvangoghimage2 = "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg/600px-Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg"
   vincentvangoghimage3 = "https://upload.wikimedia.org/wikipedia/commons/3/31/The_Sower.jpg"
 
   titles = [ "Coquelicots, La promenade (Poppies)", "Water Lilies and the Japanese bridge", "Two paintings from a series of The Houses of Parliament, London", "Les toits de Collioure", "Window at Tangier", "L'Atelier Rouge", "Bedroom in Arles", "The Starry Night", "The Sower" ]

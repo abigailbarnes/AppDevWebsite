@@ -21,7 +21,7 @@ class BookmarksController < ApplicationController
 
     painting_id = params.fetch("query_painting_title")
 
-    @the_painting = Painting.where({ :id => painting_id }).at(0)
+    @the_painting = Painting.where({ :title => painting_id }).at(0)
 
 
 
@@ -54,7 +54,7 @@ class BookmarksController < ApplicationController
 
   def destroy
     the_id = params.fetch("path_id")
-    the_bookmark = Bookmark.where({ :id => the_id }).at(0)
+    the_bookmark = Bookmark.where({ :painting_id => the_id }).at(0)
 
     the_bookmark.destroy
 
