@@ -1,7 +1,6 @@
-# Final Project for Application Development
+# Website to Bookmark Your Favorite Art Capstone Project
 
-Purpose: Capstone project for class designed to teach full-stack application development for Booth Graduate School Students
-Project Information: Designed and built Proof of Concept website from scratch using HTML, CSS, and Ruby on Rails in GitPod workspace. Website deployed using Heroku. Implimented ability for user to securely create a profile, bookmark art, and view art information.
+Application Developement (2021): capstone project for class designed to teach full-stack application development for Booth Graduate School Students. Designed and built Proof of Concept website from scratch using HTML, CSS, and Ruby on Rails in GitPod workspace. Website deployed using Heroku. Implimented ability for user to securely create a profile, bookmark art, and view art information.
 
 # Base Rails
 
